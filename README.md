@@ -1,2 +1,1 @@
-# COURSIFY
 # StrengthCoach
