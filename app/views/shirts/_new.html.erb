@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="large-6 large-offset-6 columns">
+  <%= form_for(@shirt, method: :get) do |f| %>
+
+      <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :name, autofocus: true, placeholder: 'Name' %>
+      </div>
+
+      <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :height, autofocus: true, placeholder: 'Height' %>
+      </div>
+
+      <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :collar, placeholder: 'collar' %>
+      </div>
+
+       <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :weight, placeholder: "weight" %>
+      </div>
+
+      <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :chest, autofocus: true, placeholder: 'chest' %>
+      </div>
+
+      <div class="small-12 large-11 large-centered columns ">
+        <%= f.text_field :arm, placeholder: "shoulder to elbow" %>
+      </div>
+
+      <div class="small-12 large-11 large-centered columns "> 
+        <%= f.submit "Order Shirt", class: "small button primary expand" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
