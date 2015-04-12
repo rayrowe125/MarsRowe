@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="large-6 large-offset-6 columns">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <div id="measurements">
+        <div class="row">
+          <div class="small-6 large-6  columns ">
+            <%= f.text_field :height_ft, autofocus: true, placeholder: "6'" %>
+          </div>
+          <div class="small-6 large-6 columns ">
+            <%= f.text_field :height_in, autofocus: true, placeholder: '4"' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-12 columns ">
+            <%= f.text_field :weight, autofocus: true, placeholder: 'weight' %>
+          </div>
+
+          <div class="small-12 large-12 columns ">
+            <%= f.text_field :collar, placeholder: "collar (inches)" %>
+          </div>
+
+          <div class="small-12 large-12 columns ">
+            <%= f.text_field :chest, placeholder: "chest (inches)" %>
+          </div>
+
+           <div class="small-12 large-12 columns ">
+            <%= f.text_field :arm, placeholder: "shoulder to elbow (inches)" %>
+          </div>
+
+          <div class="small-12 large-12 columns "> 
+            <%= link_to "Get Started", '#', class: "small button alert expand", id: 'nextnext' %>
+          </div>
+        </div>
+      </div>
+      <div id="hideme" class="row">
+        <div class="small-12 large-12 columns">
+          <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+        </div>
+
+        <div class="small-12 large-12 columns">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+        </div>
+
+        <div class="small-12 large-12 columns">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "password" %>
+        </div>
+
+        <div class="small-12 large-12 columns "> 
+          <%= f.submit "Pick Your Fabric", class: "small button alert expand", id: 'submit' %>
+        </div>
+
+      </div>
+    <% end %>
+    <div class="text-center"><%= link_to fa_icon('play-circle-o'), '#', style: 'font-size: 1.5em; color: black;' %></div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('#hideme').hide();
+  $('#nextnext').click(function(){
+    $('#hideme').show();
+    $('#nextnext').hide();
+    $('#measurements').hide();
+    $('#submit').show();
+  });
+});
+</script>
