@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0.6'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'paperclip', '~> 4.2'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

@@ -1,1 +1,6 @@
-<h3>Shirts</h3>
+<% @shirts.each do |shirt| %>
+<%= image_tag shirt.image.url(:medium), style: 'margin-bottom: 5px;' %>
+<%#= link_to "Delete", shirt, method: :delete %>
+<% end %>
+
+<%= render 'shirts/new', locals: { shirt: @shirt } %>

@@ -2,6 +2,7 @@ class ShirtsController < ApplicationController
 
   def index
     @shirts = Shirt.all
+    @shirt = Shirt.new
   end
 
   def new
@@ -10,12 +11,12 @@ class ShirtsController < ApplicationController
 
   def create
     @shirt = Shirt.new(shirt_params)
-    if @course.save
+    if @shirt.save
       flash[:succes] = "Shirt has been created"
-      redirect_to root_index
+      redirect_to shirts_path
     else
       flash[:alert] = "Uh-oh"
-      redirect_to root_index
+      redirect_to shirts_path
     end
   end
 
@@ -25,10 +26,17 @@ class ShirtsController < ApplicationController
   def update
   end
 
+  def destroy
+    @shirt = Shirt.find(params[:id])
+    @shirt.destroy
+    flash[:success] = "You successfully deleted that shirt!"
+    redirect_to shirts_path
+  end
+
   private
 
   def shirt_params
-    params.require(:shirt).permit(:name, :height, :collar, :weight, :chest, :arm)
+    params.require(:shirt).permit(:image)
   end
 end
 
