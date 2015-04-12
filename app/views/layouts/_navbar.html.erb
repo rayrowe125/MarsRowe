@@ -1,4 +1,4 @@
-
+<div class="contain-to-grid">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -10,7 +10,7 @@
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
-      <ul class="right">
+      <ul class="right" style="margin-right: -15px;">
         <li class="has-dropdown">
           <% if user_signed_in? %>
           <a href="#"><%= current_user.email %></a>
@@ -25,3 +25,4 @@
       </ul>
     </section>
   </nav>
+</div>
