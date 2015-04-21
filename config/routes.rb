@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :shirts
+  resources :purchases, only: [:create, :destroy, :index]
   get 'users/dashboard'
   get 'users/admin'
   
